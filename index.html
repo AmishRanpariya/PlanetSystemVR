@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>HTML</title>
+		<!-- include A-Frame obviously -->
+		<script src="https://aframe.io/releases/0.6.0/aframe.min.js"></script>
+		<!-- include ar.js for A-Frame -->
+		<script src="https://jeromeetienne.github.io/AR.js/aframe/build/aframe-ar.js"></script>
+	</head>
+
+	<body style="margin: 0px; overflow: hidden">
+		<a-scene
+			embedded
+			vr-mode-ui="enabled: false"
+			arjs="sourceType: webcam; debugUIEnabled: false; detectionMode: mono_and_matrix; matrixCodeType: 3x3;"
+		>
+			<a-assets>
+				<img id="mercury" src="Planets/2k_mercury.jpg" />
+				<img id="venus" src="Planets/2k_venus_surface.jpg" />
+				<img id="earth" src="2_no_clouds_8k.jpg" />
+				<img id="mars" src="Planets/2k_mars.jpg" />
+				<img id="jupiter" src="Planets/2k_jupiter.jpg" />
+				<img id="saturn" src="Planets/2k_saturn.jpg" />
+				<img id="uranus" src="Planets/2k_uranus.jpg" />
+				<img id="neptune" src="Planets/2k_neptune.jpg" />
+				<img id="sun" src="Planets/2k_sun.jpg" />
+				<img id="moon" src="Planets/2k_moon.jpg" />
+			</a-assets>
+			<a-marker preset="hiro">
+				<!-- <a-box id='box' 
+      position='0 0.7 0' 
+      rotation="45 0 35.26" 
+      material='color: white; opacity:0.1;'
+      ></a-box> -->
+				<a-sphere
+					id="earth-sphere"
+					position="0 0.6 0"
+					radius="0.59"
+					side="double"
+					src="#earth"
+				></a-sphere>
+				<!-- <a-entity obj-model="obj: url(banana_plant/banana_plant.obj);
+                  mtl: url(banana_plant/banana_plant.mtl)" scale="0.03 0.03 0.03">
+      </a-entity> -->
+			</a-marker>
+			<a-marker preset="kanji">
+				<!-- <a-box id='box' 
+      position='0 0.5 0' 
+      rotation="45 0 35.26" 
+      material='color: white; opacity:0.1;'
+      ></a-box> -->
+				<!-- <a-sphere id="mars-sphere"
+      position="0 0.5 0" 
+      radius="0.5" 
+      side="double" 
+      src="#mars"
+      ></a-sphere> -->
+				<a-entity
+					id="jeep"
+					rotation="0 -60 0"
+					obj-model="obj: url(Jeep_Renegade_2016_obj/Jeep_Renegade_2016.obj);
+                  mtl: url(Jeep_Renegade_2016_obj/Jeep_Renegade_2016.mtl)"
+					scale="0.3 0.3 0.3"
+				>
+				</a-entity>
+			</a-marker>
+
+			<!-- mercury -->
+			<a-marker type="barcode" value="1">
+				<a-entity
+					text="value: Mercury;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="mercury-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#mercury"
+				></a-sphere>
+			</a-marker>
+			<!-- venus -->
+			<a-marker type="barcode" value="2">
+				<a-entity
+					text="value: Venus;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="venus-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#venus"
+				></a-sphere>
+			</a-marker>
+			<!-- earth -->
+			<a-marker type="barcode" value="3">
+				<a-entity
+					text="value: Earth;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="earth-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#earth"
+				></a-sphere>
+			</a-marker>
+			<!-- mars -->
+			<a-marker type="barcode" value="4">
+				<a-entity
+					text="value: Mars;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="mars-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#mars"
+				></a-sphere>
+			</a-marker>
+			<!-- jupiter -->
+			<a-marker type="barcode" value="5">
+				<a-entity
+					text="value: Jupiter;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="jupiter-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#jupiter"
+				></a-sphere>
+			</a-marker>
+			<!-- saturn -->
+			<a-marker type="barcode" value="6">
+				<a-entity
+					text="value: Saturn;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="saturn-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#saturn"
+				></a-sphere>
+			</a-marker>
+			<!-- uranus -->
+			<a-marker type="barcode" value="7">
+				<a-entity
+					text="value: Uranus;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="uranus-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#uranus"
+				></a-sphere>
+			</a-marker>
+			<!-- neptune -->
+			<a-marker type="barcode" value="8">
+				<a-entity
+					text="value: Neptune;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="neptune-sphere"
+					position="0 0.5 0"
+					radius="0.5"
+					side="double"
+					src="#neptune"
+				></a-sphere>
+			</a-marker>
+			<!-- sun -->
+			<a-marker type="barcode" value="9">
+				<a-entity
+					text="value: Sun;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 2.2 -0.5"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					scale="1.42 1.42 1.42"
+					position="0 0.71 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="sun-sphere"
+					position="0 0.7 0"
+					radius="0.7"
+					side="double"
+					src="#sun"
+				></a-sphere>
+			</a-marker>
+			<!-- moon -->
+			<a-marker type="barcode" value="10">
+				<a-entity
+					text="value: Moon;
+      align:center;
+      side:double;
+      width:4;
+      color:white;"
+					position="0 1.5 -0.3"
+					rotation="-30 0 0"
+				></a-entity>
+				<a-box
+					id="box"
+					position="0 0.5 0"
+					rotation="45 0 35.26"
+					material="color: white; opacity:0.1;"
+				></a-box>
+				<a-sphere
+					id="moon-sphere"
+					position="0 0.5 0"
+					radius="0.4"
+					side="double"
+					src="#moon"
+				></a-sphere>
+			</a-marker>
+			<a-entity camera></a-entity>
+		</a-scene>
+		<script src="main.js" type="text/javascript" charset="utf-8"></script>
+	</body>
+</html>
